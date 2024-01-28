@@ -52,7 +52,7 @@ class CommentViewHolder(
         binding.toggleBtn.setOnCheckedChangeListener { _, isChecked ->
             // Handle the switch state change
             Handler(Looper.getMainLooper()).post {
-                listener.commentItemInteracted(position, null, isChecked)
+                listener.commentItemInteracted(position, currentText, isChecked)
             }
         }
         binding.editText.doOnTextChanged { text, _, _, _ ->
