@@ -21,7 +21,7 @@ class OptionsViewHolder(
         binding.title.text = data.title
         // Accessing the RadioGroup in the layout
         val radioGroup: RadioGroup = binding.rgBtn
-        //removing if btn already present
+        //if some view already present remove them
         radioGroup.removeAllViews()
         // Set up RadioButtons
         setupRadioGroup(

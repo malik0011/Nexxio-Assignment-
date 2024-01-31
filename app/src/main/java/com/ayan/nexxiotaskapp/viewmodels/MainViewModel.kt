@@ -14,12 +14,13 @@ class MainViewModel : ViewModel() {
     val response: LiveData<Response> = _response
 
     fun initializeJsonData(context: Context) {
+        //here, 1st convert json -> string -> data object
         val dataList = context.resources.openRawResource(R.raw.data).bufferedReader().use { it.readText() }
         _response.value = dataList.toObject()
     }
 
     // Extension function to convert JSON string to an object
     private inline fun <reified T> String.toObject(): T {
-        return Gson().fromJson(this, T::class.java)
+        return Gson().fromJson(this, T::class.java) //json string -> object
     }
 }

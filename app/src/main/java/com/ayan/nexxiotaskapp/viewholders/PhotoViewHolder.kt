@@ -29,6 +29,7 @@ class PhotoViewHolder(
                 .into(binding.mainPhoto)
         } else binding.mainPhoto.setImageBitmap(null) //for handling corner cases
 
+        //listeners
         binding.btnRemove.setOnClickListener {
             binding.mainPhoto.setImageBitmap(null)
             data.imageBitmap?.recycle() //recycling for better performance

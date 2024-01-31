@@ -70,6 +70,7 @@ class ListAdapter(
         }
     }
 
+    //helper/update-notify functions
     fun updatePhoto(position: Int, imageBitmap: Bitmap) {
         dataList[position].imageBitmap = imageBitmap
         notifyItemChanged(position)
@@ -77,13 +78,11 @@ class ListAdapter(
 
     fun updateSelectedRadioBtn(position: Int, text: String) {
         dataList[position].selectedRadioButtonText = text
-        notifyItemChanged(position)
     }
 
     fun updateCommentItem(position: Int, commentBoxVisible: Boolean, comment: String?) {
         dataList[position].isCommentBoxVisible = commentBoxVisible
         if (comment != null) dataList[position].comment = comment
-        notifyItemChanged(position)
     }
 
     fun getUpdatedList(): List<ResponseItem> {
